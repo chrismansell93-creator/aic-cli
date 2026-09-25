@@ -1,0 +1,36 @@
+{
+  "name": "aic",
+  "version": "1.0.0",
+  "description": "Agentic coding CLI — an OpenAI-compatible coding agent in your terminal",
+  "type": "module",
+  "bin": {
+    "aic": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "config.example.toml"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/cli.js', 0o755)\"",
+    "test": "tsx --test test/*.test.ts",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cli",
+    "agent",
+    "coding",
+    "openai",
+    "llm"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.16.5",
+    "tsx": "^4.20.5",
+    "typescript": "^5.7.0"
+  }
+}
